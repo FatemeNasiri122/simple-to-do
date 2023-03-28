@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+    letter-spacing: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.background-light{
+    background: url("images/bg-desktop-light.jpg") no-repeat hsl(236, 33%, 92%);
+    background-size: contain;
 }
 
-.App-link {
-  color: #61dafb;
+.background-dark{
+    background: url("images/bg-desktop-dark.jpg") no-repeat hsl(235, 21%, 11%);
+    background-size: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark-background{
+    background-color: hsl(235, 24%, 19%);
+}
+
+.light-background{
+    background-color:  hsl(0, 0%, 98%);
+}
+
+.to-do {
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.dark-text{
+    color: white;
+}
+
+.light-text{
+    color: black;
+}
+
+.to-do-container{
+    width: 40%;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.to-do-header{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    flex-grow: 0;
+    color: hsl(0, 0%, 98%);
+    margin: 1rem 0;
+}
+
+.list-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    padding: 1rem;
+    cursor: grab;
+}
+
+.list-text{
+    display: flex;
+    align-items: center;
+}
+
+.circle{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid silver;
+}
+
+.circle-check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid silver;
+    cursor: pointer;
+}
+
+.form{
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.form-wrapper{
+    border-radius: 8px;
+}
+
+.text {
+    margin-left: 1rem;
+}
+
+.input{
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 0 0.5rem;
+    background-color: inherit;
+}
+
+.theme-mode{
+    cursor: pointer;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn-stats {
+    margin-left: 1rem;
+    color: darkgrey;
+}
+
+.stats-text {
+    color: darkgrey;
+}
+
+.to-do-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.btn-stats:hover {
+    color: dimgrey;
+}
+
+.completed {
+    background-color: hsl(220, 98%, 61%);
+}
+
+.text-completed {
+    color: lightgray;
+    -webkit-text-decoration-line: line-through; /* Safari */
+    text-decoration-line: line-through;
+}
+
+.error {
+    display: block;
+    color: tomato;
+}
+
+.drag-text {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #808080;
+}
+.mobile-stats {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .to-do-container{
+        width: 80%;
+    }
+    .background-light{
+        background: url("images/bg-mobile-light.jpg") no-repeat hsl(236, 33%, 92%);
+        background-size: contain;
+    }
+
+    .background-dark{
+        background: url("images/bg-mobile-light.jpg") no-repeat hsl(235, 21%, 11%);
+        background-size: contain;
+    }
+    .mobile-stats {
+        display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+    .M-hidden {
+        display: none;
+    }
+    .to-do-stats {
+        justify-content: center;
+    }
 }
