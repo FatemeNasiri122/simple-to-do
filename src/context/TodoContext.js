@@ -1,32 +1,33 @@
 import {createContext, useReducer, useState} from "react";
 import todoReducer from "./todoReducer";
 const TodoContext = createContext();
-export const TodoProvider = ({children}) =>{
+export const TodoProvider = ({children}) => {
+    const defaultList = [
+        {id: Math.random(),
+            text: "Complete online Javascript course",
+            isCompleted: true},
+        {id: Math.random(),
+            text: "Jog around the park 3x",
+            isCompleted: false},
+        {id: Math.random(),
+            text: "10 minutes meditation",
+            isCompleted: false},
+        {id: Math.random(),
+            text: "Read for 1 hour",
+            isCompleted: false},
+        {id: Math.random(),
+            text: "Pick up groceries",
+            isCompleted: false},
+        {id: Math.random(),
+            text: "Complete Todo App on Fronted Mentor",
+            isCompleted: false},
+    ]
     const [darkMode,setDarkMode] = useState(false);
 
     const initialState = {
         list: {},
-        lists: [
-            {id: Math.random(),
-            text: "Complete online Javascript course",
-            isCompleted: true},
-            {id: Math.random(),
-                text: "Jog around the park 3x",
-                isCompleted: false},
-            {id: Math.random(),
-                text: "10 minutes meditation",
-                isCompleted: false},
-            {id: Math.random(),
-                text: "Read for 1 hour",
-                isCompleted: false},
-            {id: Math.random(),
-                text: "Pick up groceries",
-                isCompleted: false},
-            {id: Math.random(),
-                text: "Complete Todo App on Fronted Mentor",
-                isCompleted: false},
-        ],
-        allLists: [],
+        lists: defaultList,
+        allLists: defaultList,
     }
     const [state,dispatch] = useReducer(todoReducer,initialState);
     const addList = (todo) => {
