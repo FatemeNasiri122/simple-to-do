@@ -1,5 +1,4 @@
 import './App.css';
-import './index.scss';
 import Container from "./component/Container";
 import {TodoProvider} from "./context/TodoContext";
 

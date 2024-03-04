@@ -31,7 +31,7 @@ const ToDoForm = () => {
             <form action="" onSubmit={handleSubmit} className={`form  ${darkMode ? 'dark-background dark-text' : 'light-background light-text'}`}>
                 <div className="list-container">
                     <span className={`circle`}></span>
-                    <input className={`input`} type="text" value={inputValue} onChange={handleChange} placeholder='Create a new todo...'/>
+                    <input className={`input ${darkMode ? "dark-text" : "light-text"}`} type="text" value={inputValue} onChange={handleChange} placeholder='Create a new todo...'/>
                     <button className='btn' onSubmit={handleSubmit}>
                         <FaPlus cursor='pointer' color={darkMode ? 'white' : 'black'}/>
                     </button>
